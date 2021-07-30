@@ -6,11 +6,13 @@ public:
         long long mid;
         while(lo<hi)
         {
-        mid=lo+(hi-lo+1)/2;
-        if(mid*mid<=x)
+         mid=lo+(hi-lo+1)/2;
+        if(mid*mid==x)
+            return mid;
+        else if(mid*mid<x)
             lo=mid;
         else
-             hi=mid-1;      
+            hi=mid-1;      
         }
         return (int)lo;
     }
