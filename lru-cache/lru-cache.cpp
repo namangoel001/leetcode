@@ -12,26 +12,26 @@ public:
     LRUCache(int capacity) {
         cap=capacity;
     }
-    
     int get(int key) {
-      if(mp.find(key)!=mp.end())
-      {
-          change_pos(key);
-          return mp[key].first;
-      }
+     if(mp.find(key)!=mp.end())
+     {
+         change_pos(key);
+         return mp[key].first;
+     }
         return -1;
     }
     
     void put(int key, int value) {
     if(mp.find(key)!=mp.end())
     {
-        mp[key].first=value;
         change_pos(key);
+        mp[key].first=value;
     }
     else
     {
         l1.push_front(key);
-        mp[key]={value,l1.begin()};
+        mp[key].first=value;
+        mp[key].second=l1.begin();
         cap--;
     }
     if(cap<0)
