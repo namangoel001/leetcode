@@ -14,7 +14,6 @@ public:
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<int> v;
         vector<vector<int>> ans;
-//         sort(nums.begin(),nums.end());
         make_sub(ans,v,nums,0);
         return ans;
     }
