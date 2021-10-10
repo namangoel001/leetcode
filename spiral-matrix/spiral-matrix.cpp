@@ -1,11 +1,11 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-         vector<int> vec;
-        int r=matrix.size();
-        int c=matrix[0].size();
+        vector<int> vec;
         int m=0;
         int n=0;
+        int r=matrix.size();
+        int c=matrix[0].size();
         while(m<r && n<c)
         {
             for(int i=m;i<c;i++)
