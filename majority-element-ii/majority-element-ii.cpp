@@ -8,19 +8,23 @@ public:
         int maj2=-1;
         for(int i=0;i<nums.size();i++)
         {
-            if(maj1==nums[i])
+            if(nums[i]==maj1)
+            {
                 count1++;
-            else if(maj2==nums[i])
+            }
+            else if(nums[i]==maj2)
+            {
                 count2++;
+            }
             else if(count1==0)
             {
-                count1=1;
                 maj1=nums[i];
+                count1++;
             }
             else if(count2==0)
             {
-                count2=1;
                 maj2=nums[i];
+                count2++;
             }
             else
             {
@@ -30,16 +34,16 @@ public:
         }
         count1=0;
         count2=0;
-        for(int n:nums)
+        for(int i=0;i<nums.size();i++)
         {
-            if(n==maj1)
+            if(nums[i]==maj1)
                 count1++;
-            if(n==maj2)
+            else if(nums[i]==maj2)
                 count2++;
         }
         if(count1>nums.size()/3)
             vec.push_back(maj1);
-        if(count2>nums.size()/3 && maj1!=maj2)
+        if(count2>nums.size()/3)
             vec.push_back(maj2);
         return vec;
     }
